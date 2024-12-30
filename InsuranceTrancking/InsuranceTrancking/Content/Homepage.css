@@ -1,0 +1,27 @@
+﻿.carousel {
+    max-width: 100%;
+}
+
+/* Resimler tam genişlik ve uygun yükseklik */
+.carousel-item img {
+    object-fit: cover; /* Resmin alanı düzgün şekilde doldurmasını sağlar */
+    width: 100%; /* Genişlik tam olarak kapsar */
+    height: 75vh; /* Ekranın %75 yüksekliğini kaplar */
+}
+
+/* Gösterge düzenlemesi */
+.carousel-indicators {
+    bottom: 15px; /* Göstergeyi biraz yukarıda tutar */
+}
+
+    .carousel-indicators button {
+        width: 10px; /* Gösterge boyutu */
+        height: 10px;
+    }
+
+/* Önceki ve Sonraki düğme ikonları */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Şeffaf siyah arka plan */
+    border-radius: 50%; /* İkonlara yuvarlak görünüm */
+}

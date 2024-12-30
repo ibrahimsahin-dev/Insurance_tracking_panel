@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - DOU Sigorta</title>
+    <link rel="icon" href="https://i.hizliresim.com/mypwusf.png" type="image/png">
+    <link rel="stylesheet" href="~/Content/Layout.css">
+
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+
+
+</head>
+
+
+<body>
+
+    <div class="wrapper">
+        <!-- Brand Div -->
+        <div class="brand-div">
+            <a href="https://localhost:44349/home/index"><img src="https://i.hizliresim.com/mypwusf.png" alt="DOU Sigorta Logo"></a>
+            <a href="https://localhost:44349/home/index">DOU SİGORTA</a>
+            
+        </div>
+
+        <div class="menu-div dropdown-center">
+            <ul class="nav">
+                <!-- Customer Dropdown -->
+                <li class="nav-item dropdown @(Request.Url.AbsolutePath.Contains("/customers") ? "active" : "")">
+                    <a class="nav-link dropdown" href="/customers/Index" id="customerDropdown">
+                        Customer
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="customerDropdown">
+                        <li class="dropdown-item">@Html.ActionLink("Customer List", "Index", "customers", null, new { @class = "dropdown-item" })</li>
+                        <li class="dropdown-item">@Html.ActionLink("Create", "Create", "customers", null, new { @class = "dropdown-item" })</li>
+                    </ul>
+                </li>
+
+                <!-- Vehicle Dropdown -->
+                <li class="nav-item dropdown @(Request.Url.AbsolutePath.Contains("/vehicles") ? "active" : "")">
+                    <a class="nav-link dropdown" href="/vehicles/Index" id="vehicleDropdown">
+                        Vehicle
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="vehicleDropdown">
+                        <li class="dropdown-item">@Html.ActionLink("Vehicle List", "Index", "vehicles", null, new { @class = "dropdown-item" })</li>
+                        <li class="dropdown-item">@Html.ActionLink("Create", "Create", "vehicles", null, new { @class = "dropdown-item" })</li>
+                    </ul>
+                </li>
+
+                <!-- Insurance Policies Dropdown -->
+                <li class="nav-item dropdown @(Request.Url.AbsolutePath.Contains("/insurance_policies") ? "active" : "")">
+                    <a class="nav-link dropdown" href="/insurance_policies/Index" id="insurancePoliciesDropdown">
+                        Insurance Policies
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="insurancePoliciesDropdown">
+                        <li class="dropdown-item">@Html.ActionLink("Insurance Policies List", "Index", "insurance_policies", null, new { @class = "dropdown-item" })</li>
+                        <li class="dropdown-item">@Html.ActionLink("Create", "Create", "insurance_policies", null, new { @class = "dropdown-item" })</li>
+                    </ul>
+                </li>
+
+                <!-- Accident Report Dropdown -->
+                <li class="nav-item dropdown @(Request.Url.AbsolutePath.Contains("/accident_reports") ? "active" : "")">
+                    <a class="nav-link dropdown" href="/accident_reports/Index" id="accidentReportDropdown">
+                        Accident Report
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="accidentReportDropdown">
+                        <li class="dropdown-item">@Html.ActionLink("Accident Report List", "Index", "accident_reports", null, new { @class = "dropdown-item" })</li>
+                        <li class="dropdown-item">@Html.ActionLink("Create", "Create", "accident_reports", null, new { @class = "dropdown-item" })</li>
+                    </ul>
+                </li>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-left:42%">
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+
+                            @if (Session["User"] != null)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("Logout", "Login")" style=" font-weight: bold;">Logout</a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </nav>
+
+            </ul>
+        </div>
+
+        <!-- İçerik -->
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; @DateTime.Now.Year - DOU Sigorta</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

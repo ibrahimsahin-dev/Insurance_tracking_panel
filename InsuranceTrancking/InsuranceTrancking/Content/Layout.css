@@ -1,0 +1,98 @@
+﻿html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Tüm içeriği kapsayan ana container */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* İçerik alanı */
+.body-content {
+    flex: 1;
+}
+
+/* Brand Div */
+.brand-div {
+    background-color: #4b91c6;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100px;
+}
+
+    .brand-div img {
+        height: 60px;
+        margin-right: 15px;
+        margin-left: 260px;
+    }
+
+    .brand-div a {
+        margin: 0;
+        font-size: 2rem;
+        color: #000;
+        text-decoration: none;
+        padding 20px;
+    }
+
+/* Dropdown başlangıçta gizli */
+.menu-div {
+    padding: 10px 20px;
+    margin-left: 260px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+}
+
+    .menu-div .nav-link:hover {
+        color: #1dd9ce;
+    }
+
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 1000;
+}
+
+/* Mouse bağlantının üzerine geldiğinde menüyü göster */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.nav-item.active .nav-link {
+    background-color: lightblue;
+    color: white;
+}
+
+/* Menü hizalaması */
+.dropdown-menu li {
+    padding: 5px 15px;
+}
+
+    .dropdown-menu li a {
+        text-decoration: none;
+        color: #333;
+    }
+
+        .dropdown-menu li a:hover {
+            color: #1dd9ce;
+        }
+
+/* Menü hizalama ve genel yapı */
+.nav-item {
+    position: relative;
+}
+
+footer {
+    background-color: #f8f9fa; /* Hafif gri */
+    text-align: center;
+    padding: 10px;
+}

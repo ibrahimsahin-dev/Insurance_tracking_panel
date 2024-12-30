@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Policy Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container my-5">
+        <h2>Insurance Policies Details</h2>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3">Policy Number</dt>
+            <dd class="col-sm-9">@Model.PolicyNumber</dd>
+
+            <dt class="col-sm-3">Start Date</dt>
+            <dd class="col-sm-9">@Model.StartDate</dd>
+
+            <dt class="col-sm-3">End Date</dt>
+            <dd class="col-sm-9">@Model.EndDate</dd>
+
+            <dt class="col-sm-3">Coverage Type</dt>
+            <dd class="col-sm-9">@Model.CoverageType</dd>
+
+            <dt class="col-sm-3">Vehicle Plate</dt>
+            <dd class="col-sm-9">@Model.vehicles.Plate</dd>
+
+            <dt class="col-sm-3">Customer Name</dt>
+            <dd class="col-sm-9">@Model.customers.FirstName @Model.customers.LastName</dd>
+
+            <dt class="col-sm-3">Insurance Company Name</dt>
+            <dd class="col-sm-9">@Model.insurance_companies.CompanyName</dd>
+        </dl>
+        <p>
+            <a href="/insurance_policies/Edit/@Model.PolicyID" class="btn btn-success">Edit</a>
+            <a href="/insurance_policies/Index" class="btn btn-secondary">Back to List</a>
+        </p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
